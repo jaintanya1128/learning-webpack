@@ -26,6 +26,10 @@ module.exports = {
           { loader: 'style-loader', options: { injectType: 'styleTag' } }, // The `injectType`  option can be avoided because it is default behaviour. Other values for options are singletonStyleTag, lazyStyleTag, lazySingletonStyleTag, linkTag
           { loader: 'css-loader', options: { sourceMap: true } }
         ]
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   }
