@@ -1,7 +1,7 @@
 import './CustomButton.scss';
 
 class CustomButton {
-  // buttonCssClass = 'custom-button';
+  buttonCssClass = 'custom-button';
 
   render() {
     const button = document.createElement('button');
@@ -13,7 +13,11 @@ class CustomButton {
       p.classList.add('custom-text');
       body.appendChild(p);
     };
-    button.classList.add('custom-button');
+
+    // button.classList.add('custom-button');
+
+    button.classList.add(this.buttonCssClass); //this will work after setting up babel loader to support ES6 features
+
     body.appendChild(button);
   }
 }
