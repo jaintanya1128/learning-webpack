@@ -19,6 +19,13 @@ module.exports = {
           name: '[path][name].[ext]' //to generate the file into the output directory retaining the full directory structure.
           //[path] can be omitted if, only same name image is needed in the output directory
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader', options: { injectType: 'styleTag' } }, // The `injectType`  option can be avoided because it is default behaviour. Other values for options are singletonStyleTag, lazyStyleTag, lazySingletonStyleTag, linkTag
+          { loader: 'css-loader', options: { sourceMap: true } }
+        ]
       }
     ]
   }
